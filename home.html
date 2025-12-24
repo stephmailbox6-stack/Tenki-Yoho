@@ -15,19 +15,20 @@
   <body>
     <div class="tenki-yoho-container">
       <header class="city-search-form">
-        <form>
+        <form id="tenki-search-form">
           <input
             type="search"
             placeholder="Enter a city..."
             required
             class="enter-city-form"
+            id="enter-city-form"
           />
           <input type="submit" value="Search" class="search-city-form" />
         </form>
       </header>
       <main>
         <div class="tenki-details">
-          <h1 class="tenki-city">Manchester</h1>
+          <h1 class="tenki-city" id="tenki-city">Manchester</h1>
           <h2 class="weather-app-details">
             <div class="tenki-icon">🌤️</div>
             <div class="tenki-temperature">5</div>
@@ -57,5 +58,6 @@
         <a href="http://tenki-yoho.netlify.app" target="_blank">Netlify</a>.
       </footer>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
