@@ -3,39 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Tenki Yoho</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city..." required />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <h1>Manchester</h1>
-      <h2>🌤️ 5 °C</h2>
-      <div>
-        <p>
-          Wednesday 02:39, clear sky
-          <br />
-          Humidity: 60%, Wind: 3.12km/h
-        </p>
-      </div>
-    </main>
+    <div class="tenki-yoho-container">
+      <header class="city-search-form">
+        <form>
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            class="enter-city-form"
+          />
+          <input type="submit" value="Search" class="search-city-form" />
+        </form>
+      </header>
+      <main>
+        <div class="tenki-details">
+          <h1 class="tenki-city">Manchester</h1>
+          <h2 class="weather-app-details">
+            <div class="tenki-icon">🌤️</div>
+            <div class="tenki-temperature">5</div>
+            <div class="tenki-unit">°C</div>
+          </h2>
+          <div>
+            <p class="tenki-yoho-details">
+              Wednesday 02:39, clear sky
+              <br />
+              Humidity: <strong>60%</strong>, Wind: <strong>3.12km/h</strong>
+            </p>
+          </div>
+        </div>
+      </main>
 
-    <footer>
-      This app was coded by
-      <a href="https://github.com/stephmailbox6-stack" target="_blank">
-        Stephanie Okoye </a
-      >, open-sourced on
-      <a
-        href="https://github.com/stephmailbox6-stack/Tenki-Yoho"
-        target="_blank"
-        >Github</a
-      >
-      and hosted on
-      <a href="http://tenki-yoho.netlify.app" target="_blank">Netlify</a>.
-    </footer>
+      <footer>
+        This app was coded by
+        <a href="https://github.com/stephmailbox6-stack" target="_blank">
+          Stephanie Okoye </a
+        >, open-sourced on
+        <a
+          href="https://github.com/stephmailbox6-stack/Tenki-Yoho"
+          target="_blank"
+          >Github</a
+        >
+        and hosted on
+        <a href="http://tenki-yoho.netlify.app" target="_blank">Netlify</a>.
+      </footer>
+    </div>
   </body>
 </html>
