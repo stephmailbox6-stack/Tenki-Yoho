@@ -7,9 +7,9 @@ function updateTenkiYoho(response) {
   let windSpeedElement = document.querySelector("#wind-speed");
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
+  let icon = document.querySelector("#icon");
 
-  console.log(response.data);
-
+  icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="tenki-icon"/>`;
   temperatureElement.innerHTML = Math.round(temperature);
   cityElement.innerHTML = response.data.city;
   conditionElement.innerHTML = response.data.condition.description;
