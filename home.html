@@ -29,7 +29,7 @@
       </header>
       <main>
         <div class="tenki-details">
-          <h1 class="tenki-city" id="tenki-city">Manchester</h1>
+          <h1 class="tenki-city" id="tenki-city"></h1>
           <h2 class="weather-app-details">
             <div class="tenki-icon">🌤️</div>
             <div class="tenki-temperature" id="tenki-temperature">5</div>
@@ -37,9 +37,11 @@
           </h2>
           <div>
             <p class="tenki-yoho-details">
-              Wednesday 02:39, clear sky
+              <span id="time"></span>,
+              <span id="condition"></span>
               <br />
-              Humidity: <strong>60%</strong>, Wind: <strong>3.12km/h</strong>
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind-speed"></strong>
             </p>
           </div>
         </div>
