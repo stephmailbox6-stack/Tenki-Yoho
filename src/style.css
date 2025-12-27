@@ -24,7 +24,7 @@ body {
   background: #d1e9fc;
   margin: auto;
   padding: 12px 30px;
-  width: 400px;
+  width: 385px;
 }
 .search-city-form {
   background: #025ea9;
@@ -32,7 +32,7 @@ body {
   border-radius: 4px;
   color: white;
   padding: 12px 25px;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .tenki-details {
