@@ -81,6 +81,38 @@ a {
   color: #025ea9;
 }
 
+.tenki-yoho-forecast {
+  border: 1px solid rgba(128, 181, 255, 0.9);
+  border-radius: 6px;
+}
+.tenki-forecast-day {
+  display: flex;
+  justify-content: space-around;
+  line-height: 20px;
+  margin: 20px;
+  border-bottom: 1px solid #4d98d6;
+  padding: 0 0 15px 0;
+}
+
+.tenki-forecast-date {
+  color: rgba(10, 10, 10, 0.6);
+  text-align: center;
+  font-size: 18px;
+}
+.tenki-forecast-icon {
+  text-align: center;
+  font-size: 38px;
+}
+.tenki-forecast-temperatures {
+  text-align: center;
+  color: rgb(129, 8, 32);
+  display: flex;
+  justify-content: center;
+}
+.tenki-forecast-temperature {
+  padding: 0 12px;
+}
+
 footer {
   border-top: 1px solid #4d98d6;
   color: rgba(0, 0, 0, 0.6);
