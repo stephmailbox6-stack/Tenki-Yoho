@@ -88,20 +88,23 @@ a {
 .tenki-forecast-day {
   display: flex;
   justify-content: space-around;
-  line-height: 20px;
+  line-height: 10px;
   margin: 20px;
   border-bottom: 1px solid #4d98d6;
-  padding: 0 0 15px 0;
+  padding: 0 0 5px 0;
 }
 
 .tenki-forecast-date {
   color: rgba(10, 10, 10, 0.6);
   text-align: center;
   font-size: 18px;
+  margin-top: 25px;
 }
 .tenki-forecast-icon {
-  text-align: center;
-  font-size: 38px;
+  display: block;
+  margin: 0 auto;
+  width: 70px;
+  height: 70px;
 }
 .tenki-forecast-temperatures {
   text-align: center;
@@ -111,6 +114,7 @@ a {
 }
 .tenki-forecast-temperature {
   padding: 0 12px;
+  margin-top: 25px;
 }
 
 footer {

@@ -55,6 +55,13 @@ function selectSubmit(event) {
   searchCity(searchInputElement.value);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function getTenkiForecast(city) {
   let apiKey = "53f4f49c434fot046a20cc0f96d8ebba";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit=metric`;
@@ -62,23 +69,28 @@ function getTenkiForecast(city) {
 }
 
 function displayMyForecast(response) {
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
   <div class="tenki-forecast-day">
-   <div class="tenki-forecast-date">${day}</div>
-   <div class="tenki-forecast-icon">🌤️</div>
+   <div class="tenki-forecast-date">${formatDay(day.time)}</div>
+   <div> <img src="${
+     day.condition.icon_url
+   }" class="tenki-forecast-icon" /> </div>
    <div class="tenki-forecast-temperatures">
     <div class="tenki-forecast-temperature">
-      <strong> 15°</strong>
+      <strong>${Math.round(day.temperature.maximum)}°</strong>
     </div>
-    <div class="tenki-forecast-temperature">19°</div>
+    <div class="tenki-forecast-temperature">${Math.round(
+      day.temperature.minimum
+    )}°</div>
   </div>
 </div>`;
+    }
   });
 
   let forecast = document.querySelector("#tenki-forecast");
