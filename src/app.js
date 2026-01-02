@@ -53,7 +53,32 @@ function selectSubmit(event) {
   searchCity(searchInputElement.value);
 }
 
+function displayMyForecast() {
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+  <div class="tenki-forecast-day">
+   <div class="tenki-forecast-date">${day}</div>
+   <div class="tenki-forecast-icon">🌤️</div>
+   <div class="tenki-forecast-temperatures">
+    <div class="tenki-forecast-temperature">
+      <strong> 15°</strong>
+    </div>
+    <div class="tenki-forecast-temperature">19°</div>
+  </div>
+</div>`;
+  });
+
+  let forecast = document.querySelector("#tenki-forecast");
+  forecast.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#tenki-search-form");
 searchFormElement.addEventListener("submit", selectSubmit);
 
 searchCity("Manchester");
+displayMyForecast();
