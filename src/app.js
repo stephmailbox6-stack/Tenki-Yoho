@@ -16,6 +16,8 @@ function updateTenkiYoho(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = refreshDate(date);
+
+  getTenkiForecast(response.data.city);
 }
 
 function refreshDate(date) {
@@ -42,7 +44,7 @@ function refreshDate(date) {
 
 function searchCity(city) {
   let apiKey = "53f4f49c434fot046a20cc0f96d8ebba";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(updateTenkiYoho);
 }
 
@@ -53,7 +55,13 @@ function selectSubmit(event) {
   searchCity(searchInputElement.value);
 }
 
-function displayMyForecast() {
+function getTenkiForecast(city) {
+  let apiKey = "53f4f49c434fot046a20cc0f96d8ebba";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit=metric`;
+  axios(apiUrl).then(displayMyForecast);
+}
+
+function displayMyForecast(response) {
   let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHtml = "";
 
@@ -81,4 +89,3 @@ let searchFormElement = document.querySelector("#tenki-search-form");
 searchFormElement.addEventListener("submit", selectSubmit);
 
 searchCity("Manchester");
-displayMyForecast();
